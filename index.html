@@ -6,11 +6,19 @@
 	<meta name="viewport" content="width = device-width, initial-scale=1.0">
 	<!-- Bootstrap 5 CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<style>
-		.navbar-brand {
-			margin-right: 2rem;
-		}
+	
+	<style> 
+	
+	section:not(:target) {
+      display: none;
+    }
+	
+	section:target {
+		display: block;
+	} 
+	
 	</style>
+
 	<title>My Site</title>
 </head>
 <body>
@@ -23,7 +31,7 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<a class="nav-link active" aria-current="page" href="#home">Home</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#about-me">About me</a>
@@ -34,10 +42,24 @@
 					<li class="nav-item">
 						<a class="nav-link" href="https://www.linkedin.com/in/khristel-zavaleta-gamarra/">Linkedin</a>
 					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						  Social Media
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						  <li><a class="dropdown-item" href="https://www.linkedin.com/in/khristel-zavaleta-gamarra/">LinkedIn</a></li>
+						  <li><a class="dropdown-item" href="https://github.com/khristel26">Github Repository</a></li>
+						</ul>
+					  </li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+	<section id="home">
 	<div class="container">
 		<h1 class="text-center mb-5"> Hello World </h1>
 		<h3 class = "text-center mb-5"> My name is Khristel Zavaleta and I study a Master in Public Policy at the University of Chicago</h3>
@@ -85,14 +107,95 @@
 					</tr>
 				  </tbody>
 				</table>
-
-			</table>
-		</div>
-		<div id="about-me" class="mb-5">
-			<h2 class="text-center mb-5">About Me</h2>
-			<p class="text-center">I am a graduate student in Public Policy at the University of Chicago, with a focus on data analysis and program evaluation. My interests include using data to inform policy decisions, understanding the effects of policy interventions on various populations, and creating data-driven solutions to social problems. Prior to pursuing my Master's degree, I worked in research and data analysis for several nonprofit organizations in the education and social welfare sectors.</p>
 		</div>
 	</div>
 </div>
+</section>
+
+<section id="about-me">
+	<h2 class="text-center mb-5">About Me</h2>
+	<p class="text-center">I am a graduate student in Public Policy at the University of Chicago, with a focus on data analysis and program evaluation. My interests include using data to inform policy decisions, understanding the effects of policy interventions on various populations, and creating data-driven solutions to social problems. Prior to pursuing my Master's degree, I worked  for over 4 years in the public sector. </p>
+
+	<div class="accordion" id="accordionExample">
+		<div class="accordion-item">
+		  <h2 class="accordion-header bg-primary text-primary" id="headingOne">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				My Education
+			  </button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+				<div class="accordion-body text-info">
+			  <p>I earned my Bachelor's degree in Business Management from Pontificia Universidad Catolica del Peru in 2017. I went on to pursue my Master's degree in Public Policy from The University of Chicago in 2021.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="accordion-item">
+		  <h2 class="accordion-header" id="headingTwo">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				My Work Experience
+			  </button>
+			</h2>
+			<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+				<div class="accordion-body text-info">
+			  <p>After completing my Bachelor's degree, I worked as a Consultant at Social Security and Health Insurance Program, EsSalud for 1 year and Ministry of Women and Vulnerable Populations for 3 years. I also worked as teaching assistant at the Pontificia Universidad Catolica del Peru for three years. 
+				I did my summer graduate intership at Regional Service Center for Africa in Addis Ababa, Ethiopia. Currently I'm working as teaching assistant for two courses Cost-Benefit Analysis and Economic Analysis II: Introduction to Cost-Benefit Analysis
+			  </p>
+			</div>
+		  </div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingThree">
+			  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				My Hobbies
+			  </button>
+			</h2>
+		  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+			<div class="accordion-body text-info">
+			  <p>In my free time, I enjoy reading books, and traveling to new places.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+</section>
+
+<section id="Contact">
+	<h2 class="text-center mb-5">Contact</h2> 
+	<div class="row">
+		<div class="col-12 mb-5">
+			<button type="button" class="btn btn-primary" style="margin-left: 50px;">
+		Email
+		<span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+		</span>
+	  </button>
+	  <a href="mailto:kzavaleta@uchicago.edu"> Send me an email </a>
+	</div> 
+</section>
+
+
+<script>
+	// JavaScript code
+	document.addEventListener('DOMContentLoaded', function() {
+	  // check if a target is present in the URL
+	  if (location.hash) {
+		// remove the target from the URL
+		history.replaceState(null, null, ' ');
+		// display the targeted section
+		document.querySelector(location.hash).style.display = 'block';
+	  } else {
+		// display the default section
+		document.querySelector('#home').style.display = 'block';
+	  }
+	  
+	  // add click event listener to all links in the navigation
+	  document.querySelectorAll('nav a').forEach(function(link) {
+		link.addEventListener('click', function(event) {
+		  // hide the "home" section
+		  document.querySelector('#home').style.display = 'none';
+		});
+	  });
+	});
+  </script>
+  
 </body>
 </html>
