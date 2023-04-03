@@ -69,7 +69,7 @@
 		</div>
 		<div class="text-center">
 			<h2> Classes</h2>
-			<table class="table">
+			<table class="table d-none d-md-block">
 				<thead>
 					<tr>
 						<th>First quarter</th>
@@ -187,15 +187,22 @@
 		document.querySelector('#home').style.display = 'block';
 	  }
 	  
-	  // add click event listener to all links in the navigation
-	  document.querySelectorAll('nav a').forEach(function(link) {
+	  // add click event listener to all links in the navigation except for home
+	  document.querySelectorAll('nav a:not(#home)').forEach(function(link) {
 		link.addEventListener('click', function(event) {
 		  // hide the "home" section
 		  document.querySelector('#home').style.display = 'none';
 		});
 	  });
+
+	  // add click event listener to the home link
+	  document.querySelector('#home').addEventListener('click', function(event) {
+		// display the "home" section
+		document.querySelector('#home').style.display = 'block';
+	  });
 	});
-  </script>
+</script>
+
   
 </body>
 </html>
