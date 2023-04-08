@@ -1,0 +1,41 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* higher z-index value than the image container */
+  /* other styles */
+}
+
+.image-container {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("https://humanities-web.s3.us-east-2.amazonaws.com/college-prod/s3fs-public/styles/max_width_full/public/2019-06/20131016_CLC_6457.jpg?itok=bZtz83BI");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50vh; /* same height as the image-container */
+    width: 100%; /* same width as the image-container */
+    background-color: rgba(72, 69, 69, 0.6);
+    z-index: 2;
+  }
+
+  .image-container-about-me {
+    width: 100vw;
+    height: 50vh;
+    background-image: url("IMG_1459.JPG");
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+  }
+  

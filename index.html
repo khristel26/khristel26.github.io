@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width = device-width, initial-scale=1.0">
 	<!-- Bootstrap 5 CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<style> 
 	
 	section:not(:target) {
@@ -19,7 +19,8 @@
 	
 	</style>
 
-	<title>My Site</title>
+	<title>Khristel Zavaleta</title>
+	<script src="script.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,13 +32,16 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#home">Home</a>
+						<a class="nav-link active" aria-current="page" href="#home">About Me</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#about-me">About me</a>
+						<a class="nav-link" href="#about-me">Courses</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#Contact">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#Time">Time</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="https://www.linkedin.com/in/khristel-zavaleta-gamarra/">Linkedin</a>
@@ -59,62 +63,58 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-	<section id="home">
-	<div class="container">
+<section id="home">
+		<div class="text-center">
+			<div class="image-container">
+				<div class="overlay" style="height: 50vh;">
+					<div class="text-center" style="font-family: 'Source Sans Pro Thin', sans-serif; font-size: 7vw; font-weight: bold; color: #fff; padding-top: 20vh;">
+						Khristel Zavaleta G.
+					</div>
+				</div>
+			</div>
+		</div>
+	  
+	  <hr class="my-4" style="border-top: 7px solid #af83bb;">
+
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-5">
+			<img src="./IMG_8815.jpg" alt="me" class="img-fluid">
+		  </div>
+		  <div class="col-md-7">
+			<h2 style="color: rgb(215, 152, 163);" class="mb-3" >About me</h2>
+			<p class="text-secondary">I am currently pursuing an MPP degree at the Harris School of Public Policy at The University of Chicago, with over five years of work experience, including four in the social and health public sector. My roles have entailed developing and implementing policies and initiatives aimed at improving the lives of vulnerable populations. In the public sector, I have worked at the Ministry of Women and Vulnerable Populations, as well as the Social Security and Health Insurance Program, EsSalud. </p>
+			<p class="text-secondary">Additionally, I have served as a research assistant at the Behavioral Insights and Parenting Lab and worked as a graduate intern at the Regional Service Center for Africa - UNDP in Addis Ababa, Ethiopia. I also have teaching experience, having worked as a Teaching Assistant for both undergraduate courses at Pontificia Universidad Catolica del Peru and graduate courses at Harris School of Public Policy. Aside from my work experience, I have also volunteered as an electoral observer and founded a student magazine at my undergraduate university.
+			</p>
+			<p class="text-secondary">I have been honored to receive several awards, including the Fulbright Scholar Irving B. Harris Fellowship, DKG World Fellowship, P.E.O International Peace Scholarship, and the Peruvian Government Bicentennial Generation Scholarship. In 2015, I was selected for a scholarship to study at Johannes Kepler University in Austria for one semester. Additionally, I was selected by the Botin Foundation from 6,000 candidates for an intensive academic program conducted in Spain and Brazil. In 2019, I participated in the Young Latin American Leaders Program, a leadership and academic training program held in Spain and Belgium.
+			</p>
+			<p class="text-secondary">Furthermore, I have attended courses and conferences in countries such as Australia, the USA, and Colombia. I received my B.A. in Management from Pontificia Universidad Catolica del Peru on a full-ride scholarship, which is granted only to a select group of prominent Peruvian high school students.
+				</p>
+		  </div>
+		</div>
+		<hr>
+	  </div>
+
+
 		<h1 class="text-center mb-5"> Hello World </h1>
 		<h3 class = "text-center mb-5"> My name is Khristel Zavaleta and I study a Master in Public Policy at the University of Chicago</h3>
 		<div class="row">
 			<div class="col-12 text-center mb-5">
-			<img src="https://humanities-web.s3.us-east-2.amazonaws.com/college-prod/s3fs-public/styles/max_width_full/public/2019-06/20131016_CLC_6457.jpg?itok=bZtz83BI" alt="University of Chicago" class="img-fluid">
-		</div>
-		<div class="text-center">
-			<h2> Classes</h2>
-			<table class="table d-none d-md-block">
-				<thead>
-					<tr>
-						<th>First quarter</th>
-						<th>Second quarter</th>
-						<th>Third quarter</th>
-						<th>Fourth quarter</th>
-						<th>Fifth quarter</th>
-						<th>Sixth quarter</th>
-					</tr>
-				</thead>
-				  <tbody>
-					<tr>
-					  <td>Principles of Microeconomics I</td>
-					  <td>Principles of Microeconomics II</td>
-					  <td>Freedom, Morality, and the Social World</td>
-					  <td>Data Science for Marketing Decision Making</td>
-					  <td>Machine Learning - Python</td>
-					  <td>Data Publication for the Humanities</td>
-					</tr>
-					<tr>
-					  <td>Statistics for Data Analysis I</td>
-					  <td>Statistics for Data Analysis II</td>
-					  <td>Data and Programming I - R Programming</td>
-					  <td>Data and Programming II - R Programming</td>
-					  <td>Big Data and Development</td>
-					  <td>Creative Machines and Innovative Instrumentation</td>
-					</tr>
-					<tr>
-					  <td>Analytical Politics I</td>
-					  <td>Analytical Politics II</td>
-					  <td>Global Development and Social Welfare</td>
-					  <td>The Science of Elections and Campaigns</td>
-					  <td>Economic Analysis of Health Policies</td>
-					  <td>Qualitative Methods</td>
-					</tr>
-				  </tbody>
-				</table>
+			<img src="./IMG_6213.jpg" alt="me" class="img-fluid" />
 		</div>
 	</div>
-</div>
 </section>
 
 <section id="about-me">
-	<h2 class="text-center mb-5">About Me</h2>
-	<p class="text-center">I am a graduate student in Public Policy at the University of Chicago, with a focus on data analysis and program evaluation. My interests include using data to inform policy decisions, understanding the effects of policy interventions on various populations, and creating data-driven solutions to social problems. Prior to pursuing my Master's degree, I worked  for over 4 years in the public sector. </p>
+		<div class="image-container-about-me">
+			<div class="overlay" style="height: 50vh;">
+			  <div class="text-center" style="font-family: 'Source Sans Pro Thin', sans-serif; font-size: 7vw; font-weight: bold; color: #fff; padding-top: 20vh;">
+				Courses
+			  </div>
+			</div>
+		  </div>
+		  
+		  <hr class="my-4" style="border-top: 7px solid #af83bb;">
 
 	<div class="accordion" id="accordionExample">
 		<div class="accordion-item">
@@ -127,7 +127,46 @@
 				<div class="accordion-body text-info">
 			  <p>I earned my Bachelor's degree in Business Management from Pontificia Universidad Catolica del Peru in 2017. I went on to pursue my Master's degree in Public Policy from The University of Chicago in 2021.</p>
 			</div>
-		  </div>
+			<div class="text-center">
+				<h2> Classes taken as part of the Master in Public Policy</h2> </div>
+				<table class="table d-none d-md-block">
+					<thead>
+						<tr>
+							<th>First quarter</th>
+							<th>Second quarter</th>
+							<th>Third quarter</th>
+							<th>Fourth quarter</th>
+							<th>Fifth quarter</th>
+							<th>Sixth quarter</th>
+						</tr>
+					</thead>
+					  <tbody>
+						<tr>
+						  <td>Principles of Microeconomics I</td>
+						  <td>Principles of Microeconomics II</td>
+						  <td>Freedom, Morality, and the Social World</td>
+						  <td>Data Science for Marketing Decision Making</td>
+						  <td>Machine Learning - Python</td>
+						  <td>Data Publication for the Humanities</td>
+						</tr>
+						<tr>
+						  <td>Statistics for Data Analysis I</td>
+						  <td>Statistics for Data Analysis II</td>
+						  <td>Data and Programming I - R Programming</td>
+						  <td>Data and Programming II - R Programming</td>
+						  <td>Big Data and Development</td>
+						  <td>Creative Machines and Innovative Instrumentation</td>
+						</tr>
+						<tr>
+						  <td>Analytical Politics I</td>
+						  <td>Analytical Politics II</td>
+						  <td>Global Development and Social Welfare</td>
+						  <td>The Science of Elections and Campaigns</td>
+						  <td>Economic Analysis of Health Policies</td>
+						  <td>Qualitative Methods</td>
+						</tr>
+					  </tbody>
+					</table></div>
 		</div>
 		<div class="accordion-item">
 		  <h2 class="accordion-header" id="headingTwo">
@@ -156,7 +195,6 @@
 		  </div>
 		</div>
 	  </div>
-
 </section>
 
 <section id="Contact">
@@ -172,6 +210,14 @@
 	</div> 
 </section>
 
+
+<section id="Time" class="mt-5">
+	<div class="container mt-4">
+		<div id="minuteDiv"></div>
+		<button class="btn btn-primary" onclick="displayMinute()">Get Current Minute</button>
+	  </div>
+
+</section>
 
 <script>
 	// JavaScript code
