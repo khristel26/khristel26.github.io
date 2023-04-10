@@ -18,7 +18,7 @@
   object-fit: cover;
 }
 
-  .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,16 +26,178 @@
     width: 100%; /* same width as the image-container */
     background-color: rgba(72, 69, 69, 0.6);
     z-index: 2;
-  }
+    font-size: 7vw;
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Source Sans Pro Thin', sans-serif;
+}
 
-  .image-container-about-me {
+.image-courses {
     width: 100vw;
     height: 50vh;
-    background-image: url("IMG_1459.JPG");
+    background-image: url("./images/IMG_1459.JPG");
     background-size: cover;
     background-position: center top;
     position: relative;
     z-index: 1;
     object-fit: cover;
-  }
+}
+
+.image-resume {
+    width: 100vw;
+    height: 50vh;
+    background-image: url("./images/IMG_1920.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.image-personal {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("./images/IMG_5275.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.image-contact {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("./images/1517543328604.jpeg");
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.image-datapubli {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("./images/UChicago_Keller2_15637.jpeg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
   
+.dropdown-menu li {
+    position: relative;
+    }
+    .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+    }
+    .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    }
+    .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}
+
+#map {
+      height: 400px;
+      /* The height is 400 pixels */
+      width: 100%;
+      /* The width is the width of the web page */
+}
+
+h2 {
+      color: rgb(215, 152, 163);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+}
+
+h3 {
+  font-weight: bold;  
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  padding: 20px;
+  font-size: 25px;
+  color: rgb(3, 26, 87);
+}
+
+
+.section-datapub ul {
+  list-style: none; /* remove the bullet points from the list */
+  padding: 30px;
+  display: flex; /* display the list items horizontally */
+  flex-direction: column; /* display the list items vertically */
+}
+
+.section-datapub li a {
+  display: block; 
+  padding: 10px;
+  color: #49639a;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.section-datapub li a:hover {
+  background-color: #ddaacb;
+}
+
+.chalkboard{
+  background-color: rgb(246, 243, 243);
+  padding-left: 20px;
+}
+
+#minuteDiv {
+  position: absolute;
+  text-align: right;
+  margin-left: 200px;
+}
+
+#challenge1 .col::first-letter {
+  font-size: 5em;
+  color: #49639a;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.col-chall{
+  background-color: rgb(241, 201, 238);
+  line-height: 3;
+}
+
+@media only screen and (max-width: 768px) {
+  .row-cols-3 > .col {
+    width: 100%;
+  }
+}
+
+.educ {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.educ.li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.education-info {
+  flex: 1 0 60%;
+}
+.education-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.education-date {
+  flex: 1 0 40%;
+  margin-bottom: 20px;
+}
