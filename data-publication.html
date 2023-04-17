@@ -19,7 +19,7 @@
 	<title>Data Publication</title>
 </head>
 
-<body>
+<body onload="loadFunctions()">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"></a>
@@ -90,18 +90,24 @@
     <div class="container mt-5">
         
         <div class="row">
-            <div class="chalkboard col-md-4">
+            <div class="chalkboard col-md-3">
                 <h2>Digital Chalkboard</h2>
                 <div class="section-datapub mt-5">
                     <ul>
                         <li><a href="#date-function">Date Function</a></li>
                         <li><a href="#display-function">Display Function</a></li>
-                        <li><a href="#challenge1">Challenge 1</a></li>
+                        <li><a href="#challenge1">Columns</a></li>
+                        <li><a href="#buttonfunction">Button Function</a></li>
+						<li><a href="#array">Function with array</a></li>
+						<li><a href="#sortedarray">Sorted Array</a></li>
+						<li><a href="#wikipedia">Wikipedia API</a></li>
+						<li><a href="#map-api">Map API</a></li>
+						<li><a href="#ochre-api">OCHRE API</a></li>
                     </ul>
                 </div>
             </div>  
 
-            <div class="col-md-8">
+            <div class="col-md-9">
 
                 <section id="date-function" style="display: none;">
                     <div class="container mt-5">
@@ -126,16 +132,90 @@
 
             <section id="challenge1">
                 <div class="container">
-                    <div class="row row-cols-1 row-cols-3">
+                    <div class="row row-cols-1 row-cols-4">
                       <div class="col mb-4 col-chall">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quas corporis repellendus ipsum magnam ut, ex voluptatem optio consequuntur pariatur nobis voluptatibus provident adipisci inventore veniam possimus, ducimus earum dicta.</div>
                       <div class="col mb-4 col-chall">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque cumque voluptatem, quas ipsam minus, quos nam sequi soluta ullam sit totam, hic tenetur vero! Eum, necessitatibus? A dignissimos expedita sit.</div>
                       <div class="col mb-4 col-chall">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia voluptate sequi voluptatem veritatis in! Ipsa nihil est veniam ullam deserunt illo eligendi rerum beatae deleniti impedit! Id, rerum. Dolores, sint?</div>
+                        <div class="col mb-4 col-chall">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis autem soluta assumenda, corporis at architecto dolores molestias! Provident, veniam sed. Asperiores unde ut, optio facilis non illum cupiditate iusto dolor.</div>
                     </div>
                   </div>
             </section>
+
+            <section id="buttonfunction">
+                <div class="col-md-4 mt-5 d-flex flex-column">
+                    <button class="btn btn-dark mb-4" onclick="myFunction()">Click me</button>
+                    <button class="btn btn-primary mb-4" onclick="alertmessage()">Message</button>
+                </div>
+            </section>
+
+			<section id="array">
+				<div class="col-md-4 mt-5 d-flex flex-column">
+                    <button class="btn btn-dark mb-4" onclick="findPresidentOrder()">Test the order of the president</button>
+                </div>
+			</section>
+
+			<section id="sortedarray">
+				<div class="align-items-center justify-content-center col-md-9 mt-5 d-flex flex-column">
+					<h4>Sorted Array</h4>
+					<p>Enter a list of comma-separated list of integers:</p>
+					<input type="text" id="input" name="input">
+                    <button class="btn btn-dark mb-4 mt-5" onclick="parseArray()">Sort</button>
+					<div id="output"></div> 
+                </div>
+			</section>
+			
+			<section id="map-api">
+				<div class="map-container d-flex flex-column">
+					<div id="map"></div>
+				</div>
+			</section>
+
+			<section id="wikipedia">
+				<div class="col-md-8 mt-5 d-flex flex-column">
+					<h2>Wikipedia Search</h2>
+					<form>
+						<div class="row">
+							<div class="col">
+								<input type="text" id="searchterm" class="form-control" placeholder="Enter your search term here">
+							</div>
+
+						</div>
+					</form>
+					<button type="submit" class="btn btn-primary my-3" onclick="wikiapi()"> Search</button>
+					<div class="container" id="wiki"></div>
+                </div>
+			</section>
+
+			<section id="ochre-api">
+				<div class="-5 d-flex flex-column">
+					<div id="nav-placeholder"></div>
+						<div class="container mt-3">
+							<div id="title"></div>
+							<div class="container">
+								<h3 id="projectTitle"></h3>
+								<h4 id="setTitle"></h4>
+								<div id="setDescription"></div>
+								<table class="table table-striped order-table" id="ochreTable">
+									<thead class="thead-dark" id="ochreTableColumns">
+										<tr>
+											<th style="text-align: left; width: 30%">Name</th>
+											<th style="text-align: left; width: 30%">Description</th>
+										</tr>
+									</thead>
+									<tbody id="ochreTableBody">
+
+									</tbody>
+
+								</table>
+							</div>
+							<a id="license"></a>
+						</div>
+                </div>
+			</section>
 
         </div>
     </div>
@@ -167,5 +247,49 @@
     
         
 </body>
+
+<br>
+<br>
+<br>
+
+<footer class="bg-dark text-white d-none d-md-block">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-4 mt-4">
+		  <!-- <h5>Khristel Zavaleta G.</h5> -->
+		  <br>
+		  <br>
+		  <address>
+			1307 E 60th St<br>
+			Chicago, IL 60637<br>
+			USA
+		  </address>
+		</div>
+
+		<div class="col-md-4 mt-4">
+		  <h5>Quick links</h5>
+		  <ul class="list-unstyled">
+			<li><a href="resume.html" class="footerlink">Resume</a></li>
+			<li><a href="personal.html" class="footerlink">Personal</a></li>
+			<li><a href="contact.html" class="footerlink">Contact me</a></li>
+			<li><a href="data-publication.html" class="footerlink">Data Publication Class</a></li>
+		  </ul>
+		</div>
+		<div class="col-md-4 mt-4">
+			<h5>Contact me</h5>
+			<p>
+				Email: kzavaleta@uchicago.edu <br>
+				Phone: +1 (336)609-4107
+			</p>
+		</div>
+	  </div>
+	  <hr>
+	  <div class="row">
+		<div class="col-md-6">
+		  <p>&copy; 2023</p>
+		</div>
+	  </div>
+	</div>
+  </footer>
 
 </html>
