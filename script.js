@@ -105,22 +105,30 @@ function myFunction() {
   //Function sorted array
 
   function parseArray(){
-    var inputStr = document.getElementById("input").value;
+    var inputStr1 = document.getElementById("input1").value.trim();
+    var inputStr2 = document.getElementById("input2").value.trim();
+    var inputStr3 = document.getElementById("input3").value.trim();
+    var inputStr4 = document.getElementById("input4").value.trim();
     
-    var regex = /^(\d+,)*\d+$/;
-    if (!regex.test(inputStr)) {
-        alert("Please enter a comma-separated list of integers");
-        return;
+    var regex = /^[a-zA-Z]+$/;;
+    if (!regex.test(inputStr1) || !regex.test(inputStr2) || !regex.test(inputStr3) || !regex.test(inputStr4)) {
+      alert("Please enter only valid countries");
+      return;
     }
     
-    var inputArr = inputStr.split(",").map(function(item) {
-      return parseInt(item, 10);
-    });
-    var sortedArr = inputArr.sort(function(a, b) {
-      return a - b;
-    });
-    document.getElementById("output").innerHTML = "<p>" + sortedArr.join(", ") + "</p>";
-}
+    var inputArr = [inputStr1, inputStr2, inputStr3, inputStr4];
+    var caseInsensitiveSort = function(a, b) {
+      return a.toLowerCase().localeCompare(b.toLowerCase());
+    };
+
+    var sortedArr = inputArr.slice().sort(caseInsensitiveSort);
+
+    var outputStr = "<p><strong>Original Input Array:</strong> [" + inputArr.join(", ") + "]</p>";
+    outputStr += "<p><strong>Sorted Array:</strong> [" + sortedArr.join(", ") + "]</p>";
+
+
+    document.getElementById("output").innerHTML = outputStr;
+  }
 
 
   //Function Wikipedia
