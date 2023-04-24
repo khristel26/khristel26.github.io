@@ -1,27 +1,7 @@
-// The HTML is configured intentionally with h2.animalTitle containing audio file names like "Cow".
-// Put all of your code inside the DOMContentLoaded event listener provided.
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Use .getElementsByClassName() to get an HTMLCollection of all .animalTitle elements.
-
-  // Create a new Object with properties and values like 'animal01: "Cow" '.
-    // These values can be found in the HTMLCollection.
-
-  // Use the Object to create event listeners for <img> elements that launch the provided howler script.
-    // Write a single 'for...in' statement to add listeners to all the <img> elements.
-    // .addEventListener('click', () => {CODE GOES HERE}
-    // The animal title (e.g. 'Cow') determines which sprite is played.
-
-  // Leverage the Object to add mouseover styling to the <img> elements.
-    // You'll need to add listeners to the <img> elements.
-    // Then you'll need to write functions to do the events.
-    // On mouseover add this.style.border = '3px solid red';
-    // On mouseout add this.style.border = '0px';
-});
-
 function playAnimal(animalSound) {
+  console.log('Playing animal sound:', animalSound);
   var sound = new Howl({
-    src: [`media/${animalSound}.mp3`, `media/${animalSound}.webm`],
+    src: [`https://raw.githubusercontent.com/khristel26/khristel26.github.io/master/howler_xc/media/${animalSound}.mp3`, `https://raw.githubusercontent.com/khristel26/khristel26.github.io/master/howler_xc/media/${animalSound}.webm`],
     sprite: {
       Cow: [0, 3000],
       Duck: [0, 3000],
@@ -31,4 +11,31 @@ function playAnimal(animalSound) {
   });
   sound.play(animalSound);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const animalTitles = document.getElementsByClassName('animalTitle');
+  console.log('Number of animalTitle elements:', animalTitles.length);
+
+  const animalTitlesObj = {};
+  for (const title of animalTitles) {
+    animalTitlesObj[title.innerText] = title.innerText;
+  }
+
+  const howlerImages = document.getElementsByClassName('howlerImage');
+
+  for (const img of howlerImages) {
+    img.addEventListener('click', () => {
+      const animalTitle = img.previousElementSibling.innerText;
+      playAnimal(animalTitlesObj[animalTitle]);
+    });
+
+    img.addEventListener('mouseover', () => {
+      img.style.border = '3px solid red';
+    });
+
+    img.addEventListener('mouseout', () => {
+      img.style.border = '0px';
+    });
+  }
+});
 

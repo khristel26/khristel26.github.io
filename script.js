@@ -81,69 +81,70 @@ function myFunction() {
   } else {
     alert("Please enter a valid name.");
   }
-  }
+}
 
 
-  function alertmessage() {
-    alert("Thank you for visiting my page!");
-  }
+function alertmessage() {
+  alert("Thank you for visiting my page!");
+}
 
-  //Function array
 
-  function findPresidentOrder() {
-    const presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe", "Adams", "Jackson", "Van Buren", "Harrison", "Tyler", "Polk", "Taylor", "Fillmore", "Pierce", "Buchanan", "Lincoln", "Johnson", "Grant", "Hayes", "Garfield", "Arthur", "Cleveland", "Harrison", "Cleveland", "McKinley", "Roosevelt", "Taft", "Wilson", "Harding", "Coolidge", "Hoover", "Roosevelt", "Truman", "Eisenhower", "Kennedy", "Johnson", "Nixon", "Ford", "Carter", "Reagan", "Bush", "Clinton", "Bush", "Obama", "Trump", "Biden"];
-    var lastNameInput = prompt("Enter the last name of a US President to discover their order of presidency");
-    var exp = /^[a-zA-ZÀ-ÿ ]+$/;
-    var index = presidents.findIndex(president => president.toLowerCase() === lastNameInput.toLowerCase())
-    if (index >= 0) {
-      alert(`The order of ${presidents[index]} is ${index + 1}.`);
+//Function array
+
+function findPresidentOrder() {
+  const presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe", "Adams", "Jackson", "Van Buren", "Harrison", "Tyler", "Polk", "Taylor", "Fillmore", "Pierce", "Buchanan", "Lincoln", "Johnson", "Grant", "Hayes", "Garfield", "Arthur", "Cleveland", "Harrison", "Cleveland", "McKinley", "Roosevelt", "Taft", "Wilson", "Harding", "Coolidge", "Hoover", "Roosevelt", "Truman", "Eisenhower", "Kennedy", "Johnson", "Nixon", "Ford", "Carter", "Reagan", "Bush", "Clinton", "Bush", "Obama", "Trump", "Biden"];
+  var lastNameInput = prompt("Enter the last name of a US President to discover their order of presidency");
+  var exp = /^[a-zA-ZÀ-ÿ ]+$/;
+  var index = presidents.findIndex(president => president.toLowerCase() === lastNameInput.toLowerCase())
+  if (index >= 0) {
+    alert(`The order of ${presidents[index]} is ${index + 1}.`);
     } else {
-      alert("Please enter a valid president last name.");
-    }
+    alert("Please enter a valid president last name.");
   }
+}
 
-  //Function sorted array
+//Function sorted array
 
-  function parseArray(){
-    var inputStr1 = document.getElementById("input1").value.trim();
-    var inputStr2 = document.getElementById("input2").value.trim();
-    var inputStr3 = document.getElementById("input3").value.trim();
-    var inputStr4 = document.getElementById("input4").value.trim();
+function parseArray(){
+  var inputStr1 = document.getElementById("input1").value.trim();
+  var inputStr2 = document.getElementById("input2").value.trim();
+  var inputStr3 = document.getElementById("input3").value.trim();
+  var inputStr4 = document.getElementById("input4").value.trim();
     
-    var regex = /^[a-zA-Z]+$/;;
-    if (!regex.test(inputStr1) || !regex.test(inputStr2) || !regex.test(inputStr3) || !regex.test(inputStr4)) {
-      alert("Please enter only valid countries");
-      return;
-    }
-    
-    var inputArr = [inputStr1, inputStr2, inputStr3, inputStr4];
-    var caseInsensitiveSort = function(a, b) {
-      return a.toLowerCase().localeCompare(b.toLowerCase());
-    };
-
-    var sortedArr = inputArr.slice().sort(caseInsensitiveSort);
-
-    var outputStr = "<p><strong>Original Input Array:</strong> [" + inputArr.join(", ") + "]</p>";
-    outputStr += "<p><strong>Sorted Array:</strong> [" + sortedArr.join(", ") + "]</p>";
-
-
-    document.getElementById("output").innerHTML = outputStr;
+  var regex = /^[a-zA-Z]+$/;;
+  if (!regex.test(inputStr1) || !regex.test(inputStr2) || !regex.test(inputStr3) || !regex.test(inputStr4)) {
+    alert("Please enter only valid countries");
+    return;
   }
+    
+  var inputArr = [inputStr1, inputStr2, inputStr3, inputStr4];
+  var caseInsensitiveSort = function(a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  };
+
+  var sortedArr = inputArr.slice().sort(caseInsensitiveSort);
+
+  var outputStr = "<p><strong>Original Input Array:</strong> [" + inputArr.join(", ") + "]</p>";
+  outputStr += "<p><strong>Sorted Array:</strong> [" + sortedArr.join(", ") + "]</p>";
 
 
-  //Function Wikipedia
+  document.getElementById("output").innerHTML = outputStr;
+}
 
-  function wikiapi(){
 
-    var searchterm = document.getElementById('searchterm').value;
-    var connect = new XMLHttpRequest();
-    var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchterm;
-    connect.open('GET', url);
-    connect.onload = function (){
-      var wikiObject = JSON.parse(this.response);
-      //console.log(wikiObject)
-      var pages = wikiObject.query.pages;
-      for (var i in pages){
+//Function Wikipedia
+
+function wikiapi(){
+
+  var searchterm = document.getElementById('searchterm').value;
+  var connect = new XMLHttpRequest();
+  var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch=" + searchterm;
+  connect.open('GET', url);
+  connect.onload = function (){
+    var wikiObject = JSON.parse(this.response);
+    //console.log(wikiObject)
+    var pages = wikiObject.query.pages;
+    for (var i in pages){
         /*var newDiv = document.createElement("div");
         newDiv.setAttribute('class', 'row h5');
         document.getElementById("wiki").appendChild(newDiv);
@@ -159,12 +160,12 @@ function myFunction() {
 
     connect.send();
 
-  }
+}
 
 
-  //Map Data publication
+//Map Data publication
 
-  function mapLoad2() {
+function mapLoad2() {
     var place = [{ name: "Harris School of Public Policy", latLng: [41.7859287, -87.6013923] }];
   
     var mbAttr =
@@ -214,27 +215,27 @@ function myFunction() {
         .openOn(map);
     }
     map.on("click", onMapClick);
-  }
+}
 
 
-  function loadFunctions() {
+function loadFunctions() {
     mapLoad2();
     loadXML();
-  }
+}
 
 
 
-  //OCHRE API
+//OCHRE API
 
-  var parentElement = document.getElementById('ochreTableBody')
-  var url= "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300"
+var parentElement = document.getElementById('ochreTableBody')
+var url= "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300"
   
-  function loadXML (){
+function loadXML (){
     XMLrequest(url);
     console.log('loadXML -- ok');
-  };
+};
 
-  function XMLrequest(link){
+function XMLrequest(link){
     var connect = new XMLHttpRequest();
     connect.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
@@ -244,9 +245,9 @@ function myFunction() {
     connect.open('GET',link, true);
     connect.send();
     console.log('XML request -- ok')
-  }
+}
   
-  function listTexts(sourceXML){
+function listTexts(sourceXML){
     document.getElementById('projectTitle').innerText = sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML;
     document.getElementById('setTitle').innerText = sourceXML.getElementsByTagName('set')[0].children[3].children[0].innerHTML;
     document.getElementById('setDescription').innerText = sourceXML.getElementsByTagName('set')[0].children[4].innerHTML;
@@ -271,7 +272,7 @@ function myFunction() {
       td2.textContent = textList[i].children[3].innerHTML;
       document.getElementById('row_'+i).appendChild(td2);
     }
-  }
+}
 
   
 
