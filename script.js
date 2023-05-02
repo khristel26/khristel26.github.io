@@ -275,5 +275,56 @@ function listTexts(sourceXML){
 }
 
   
+//MUSIC API
 
-  
+function handleKeyPress(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    search();
+  }
+}
+
+function search() {
+  const searchTerm = document.getElementById("searchInput").value;
+  const url = `https://musicbrainz.org/ws/2/artist/?query=${searchTerm}&fmt=json`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const resultList = document.getElementById("resultList");
+      resultList.innerHTML = "";
+      data.artists.forEach(artist => {
+        const resultItem = document.createElement("li");
+        resultItem.innerHTML = `<a href="#" onclick="getAlbums('${artist.id}', '${artist.name}')">${artist.name}</a>`;
+        resultList.appendChild(resultItem);
+      });
+      const albumTable = document.getElementById("albumTable");
+      albumTable.style.display = "none";
+      document.getElementById("titleHeader").innerHTML = "";
+    });
+}
+
+
+function getAlbums(artistId, artistName) {
+  const url = `https://musicbrainz.org/ws/2/release/?query=arid:${artistId}&fmt=json`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const albumTable = document.getElementById("albumTable");
+      const albumTableBody = albumTable.getElementsByTagName("tbody")[0];
+      const titleHeader = document.getElementById("titleHeader");
+      titleHeader.innerHTML = "";
+      titleHeader.innerHTML = `${artistName}`;
+      albumTableBody.innerHTML = "";
+      data.releases.forEach(release => {
+        const row = albumTableBody.insertRow();
+        const dateCell = row.insertCell();
+        const titleCell = row.insertCell();
+        dateCell.innerHTML = release.date;
+        titleCell.innerHTML = `<a href="https://musicbrainz.org/release/${release.id}" target="_blank">${release.title}</a>`;
+      });
+      albumTable.style.display = "table";
+      document.getElementById("resultList").innerHTML = "";
+    });
+}
+
+
