@@ -370,7 +370,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-//var
-
-$(function() {$("#nav-placeholder").load("nav.html");});
